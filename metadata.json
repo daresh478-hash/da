@@ -1,0 +1,6 @@
+{
+  "name": "OneFlow AI",
+  "description": "The AI Execution Twin — Transform meeting conversations into tracked commitments, interactive dependency graphs, deterministic delay simulations, and human-approved recovery plans.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

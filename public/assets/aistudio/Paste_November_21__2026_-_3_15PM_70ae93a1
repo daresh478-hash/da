@@ -1,0 +1,1291 @@
+# MASTER BUILD PROMPT
+## ONEFLOW AI — THE AI EXECUTION TWIN
+### From Conversation to Completion.
+
+---
+
+# 1. YOUR ROLE
+
+Act as an elite multidisciplinary product engineering team consisting of:
+
+- Principal Full-Stack Software Engineer
+- Senior AI/ML Engineer
+- AI Agent Systems Architect
+- Senior UI/UX Product Designer
+- Workflow Automation Engineer
+- Database and API Architect
+- Quality Assurance Engineer
+- Product Manager specializing in AI SaaS
+
+Your mission is to design, develop, test, and deliver a **production-minded, hackathon-ready, fully interactive AI SaaS application named OneFlow AI**.
+
+Build the actual application, not just a landing page, design mockup, static prototype, or collection of disconnected components.
+
+The application must demonstrate a complete, end-to-end AI-powered meeting-to-execution workflow.
+
+**IMPORTANT: Preserve the exact product identity, central innovation, features, and workflow described below. Do not replace the idea with a generic AI chatbot, meeting summarizer, task manager, or project management application.**
+
+Use excellent engineering judgment for implementation details without changing the fundamental concept.
+
+---
+
+# 2. PRODUCT IDENTITY
+
+**Product Name:** OneFlow AI
+
+**Product Category:** AI SaaS / Intelligent Workflow Automation / Agentic AI
+
+**Hackathon:** Product Space AI Hackathon
+
+**Official Problem Statement:** 03 — Meeting-to-Execution Agent
+
+**Core Innovation:** AI Execution Twin
+
+**Primary Tagline:** From Conversation to Completion.
+
+**Supporting Tagline:** An AI that remembers promises, predicts delays, and helps teams finish what they started.
+
+**Product Philosophy:**
+
+Most meeting assistants focus on what was said.
+
+OneFlow AI focuses on what happens next.
+
+Our platform must go beyond summarization to understand commitments, map dependencies, anticipate execution risks, simulate project delays, and generate intelligent recovery plans.
+
+The product should feel like an AI-powered project execution partner rather than another meeting notes application.
+
+---
+
+# 3. THE REAL-WORLD PROBLEM
+
+Modern teams conduct meetings using platforms such as Zoom, Google Meet, and Microsoft Teams.
+
+During meetings, team members make commitments, assign responsibilities, establish deadlines, and discuss dependencies.
+
+However, these commitments are often scattered across meeting transcripts, chat messages, task boards, documents, and other disconnected SaaS tools.
+
+This creates five major challenges:
+
+1. **Lost Commitments:** Important promises and responsibilities are forgotten after meetings.
+2. **Disconnected Workflows:** Teams manually transfer meeting decisions into task management systems.
+3. **Hidden Dependencies:** Teams do not understand how one delayed task affects other tasks.
+4. **Reactive Project Management:** Delays are discovered after they have already affected progress.
+5. **Poor Recovery Planning:** Teams lack intelligent support for adjusting schedules and recovering from execution problems.
+
+Existing meeting assistants commonly emphasize summaries and action-item extraction.
+
+Our goal is to demonstrate a deeper solution focused on execution intelligence.
+
+---
+
+# 4. THE SOLUTION
+
+Build **OneFlow AI**, a unified AI-powered execution workspace that transforms meeting conversations into structured project plans.
+
+The platform must:
+
+- Analyze meeting transcripts and notes.
+- Identify commitments, decisions, deadlines, and responsibilities.
+- Convert commitments into actionable tasks.
+- Identify dependencies between tasks.
+- Generate an interactive dependency graph.
+- Track task progress.
+- Identify potential project execution risks.
+- Simulate the impact of delayed tasks.
+- Generate AI-assisted recovery recommendations.
+- Allow users to review and approve changes.
+- Display everything inside one centralized dashboard.
+
+The defining capability is the **AI Execution Twin**.
+
+This is a continuously updated digital representation of a project's execution state, including its tasks, commitments, dependencies, deadlines, and risks.
+
+The Execution Twin should evolve whenever the project changes.
+
+It must not be represented merely as a chatbot persona.
+
+---
+
+# 5. THE FIVE CORE INNOVATIONS
+
+## FEATURE 1 — COMMITMENT INTELLIGENCE
+
+Create an intelligent AI meeting analysis engine.
+
+Users must be able to:
+
+- Paste meeting transcripts.
+- Upload TXT and PDF meeting notes.
+- View meeting history.
+- Analyze meetings using AI.
+- Review extracted commitments.
+- Edit or approve generated tasks.
+
+The AI must identify:
+
+- Meeting title
+- Meeting summary
+- Key decisions
+- Action items
+- Task owners
+- Due dates
+- Task priorities
+- Explicit commitments
+- Unresolved questions
+- Potential dependencies
+
+### Example
+
+Input:
+
+Arun: "I'll complete the frontend by Friday."
+
+Sanjeev: "I'll integrate the API once Arun finishes."
+
+Dharani: "I'll test everything before Monday."
+
+Expected AI interpretation:
+
+**Task 1**
+- Title: Complete frontend
+- Owner: Arun
+- Deadline: Friday
+- Status: Pending
+
+**Task 2**
+- Title: Integrate API
+- Owner: Sanjeev
+- Dependency: Task 1
+- Status: Blocked until Task 1 is ready
+
+**Task 3**
+- Title: Test application
+- Owner: Dharani
+- Dependency: Task 2, if supported by the meeting context
+- Deadline: Monday
+- Status: Pending
+
+Do not invent a dependency merely because tasks appear in sequence.
+
+If ownership, deadlines, or dependencies are unclear, mark them as requiring confirmation.
+
+### AI Requirements
+
+Use structured JSON outputs with schema validation.
+
+Each extracted commitment should contain:
+
+- Unique identifier
+- Task title
+- Description
+- Owner
+- Due date
+- Priority
+- Source transcript excerpt
+- Confidence or uncertainty indicator
+- Dependency references
+- Approval status
+
+All generated tasks must be editable before they become active.
+
+---
+
+## FEATURE 2 — DEPENDENCY DNA
+
+Build an interactive visual dependency graph.
+
+This feature must represent how project tasks depend on each other.
+
+Example:
+
+Frontend Development  
+↓  
+API Integration  
+↓  
+System Testing  
+↓  
+Final Deployment
+
+### Required Functionality
+
+- Display tasks as interactive nodes.
+- Display dependencies as directional edges.
+- Support zooming and panning.
+- Allow users to click nodes for task details.
+- Highlight blocked tasks.
+- Highlight overdue tasks.
+- Highlight critical dependency chains.
+- Update the graph when tasks change.
+- Detect circular dependencies.
+- Prevent invalid dependency relationships.
+
+### Visual Indicators
+
+- Green: Completed
+- Blue: In Progress
+- Amber: At Risk
+- Red: Blocked or Overdue
+- Gray: Not Started
+
+Use a graph visualization library such as React Flow.
+
+The graph must be generated from actual application task data.
+
+Do not hardcode a graph that remains unchanged after the user edits tasks.
+
+---
+
+## FEATURE 3 — FUTURE IMPACT SIMULATOR
+
+### OUR SIGNATURE INNOVATION
+
+This is the centerpiece of the entire product.
+
+Create a **What-If Simulation Engine** that allows users to understand the possible consequences of project delays.
+
+### Example
+
+A project contains:
+
+- Frontend Development — Arun
+- API Integration — Sanjeev
+- System Testing — Dharani
+- Deployment — Team
+
+The user selects Frontend Development and enters:
+
+**Delay: 2 days**
+
+The system must analyze the dependency graph and calculate:
+
+1. Which downstream tasks are affected.
+2. Whether their start dates need adjustment.
+3. Whether their completion dates may change.
+4. Whether the overall project deadline is threatened.
+5. Which team members should be informed.
+6. Which tasks may become blocked.
+
+### Simulation Interface
+
+Create a dedicated interactive panel containing:
+
+**Simulation Input**
+- Select task
+- Enter delay duration
+- Select simulation scenario
+- Run simulation
+
+**Simulation Results**
+- Original timeline
+- Simulated timeline
+- Directly affected tasks
+- Indirectly affected tasks
+- Estimated project delay
+- At-risk deadlines
+- Dependency impact visualization
+
+Display before-and-after comparisons.
+
+### Important Engineering Requirement
+
+The simulation must use real scheduling and dependency calculations.
+
+Use a deterministic dependency-aware scheduling algorithm for timeline calculations.
+
+Do not use an LLM to invent scheduling results.
+
+AI may explain the calculated results in natural language, but the underlying impact analysis must be algorithmically derived.
+
+Ensure the simulator:
+
+- Handles parallel tasks.
+- Handles tasks with multiple dependencies.
+- Respects task durations.
+- Supports available scheduling slack.
+- Detects dependency cycles.
+- Avoids changing actual project data during a preview.
+
+The simulator must be functional, not decorative.
+
+---
+
+## FEATURE 4 — AI RECOVERY PLANNER
+
+Create an AI-powered recovery recommendation engine.
+
+When the simulation identifies execution risks, OneFlow AI should generate practical recovery strategies.
+
+### Example
+
+Problem:
+
+Frontend Development is delayed by two days.
+
+The system identifies that API Integration and Testing may also be delayed.
+
+The AI Recovery Planner proposes options such as:
+
+**Option A — Parallel Execution**
+
+Begin API contract preparation while frontend development continues.
+
+**Option B — Revised Timeline**
+
+Adjust dependent task dates and propose an updated delivery schedule.
+
+**Option C — Scope Adjustment**
+
+Recommend separating noncritical frontend improvements from essential functionality.
+
+### Required Functionality
+
+- Generate multiple recovery strategies.
+- Explain each recommendation.
+- Identify affected tasks.
+- Display potential benefits.
+- Highlight trade-offs and assumptions.
+- Allow users to compare recovery options.
+- Require user approval before applying changes.
+- Preserve the original plan until approval.
+
+### Critical Rule
+
+AI must never silently modify project deadlines, task ownership, or external systems.
+
+All important changes require explicit user confirmation.
+
+Do not claim that a recovery plan guarantees project completion.
+
+---
+
+## FEATURE 5 — EXECUTION TWIN DASHBOARD
+
+Build a centralized workspace representing the current execution state of the project.
+
+The dashboard must include:
+
+### Overview Metrics
+
+- Total projects
+- Active tasks
+- Completed tasks
+- Pending commitments
+- Blocked tasks
+- Overdue tasks
+- Upcoming deadlines
+- At-risk tasks
+
+### Main Dashboard Sections
+
+**A. Project Health**
+
+Display project status using meaningful indicators derived from task data.
+
+**B. Commitment Tracker**
+
+Show promises extracted from meetings and their current status.
+
+**C. Task Execution Board**
+
+Provide a Kanban-style task management interface.
+
+Columns:
+
+- To Do
+- In Progress
+- Blocked
+- Completed
+
+**D. Dependency Intelligence**
+
+Show a preview of the project dependency graph.
+
+**E. Risk Radar**
+
+Highlight scheduling and dependency risks.
+
+**F. Recent AI Insights**
+
+Show AI-generated explanations and recommendations based on actual project state.
+
+**G. Upcoming Deadlines**
+
+Display deadlines and responsible team members.
+
+### Important
+
+All dashboard metrics must be computed from actual application data.
+
+Do not display fake statistics as though they represent real user activity.
+
+Demo data must be clearly labeled.
+
+---
+
+# 6. COMPLETE END-TO-END USER WORKFLOW
+
+Implement the following workflow exactly.
+
+### STEP 1 — CREATE PROJECT
+
+User creates a project.
+
+Inputs:
+
+- Project name
+- Project description
+- Team members
+- Project deadline
+
+### STEP 2 — ADD MEETING
+
+User opens the Meeting Intelligence workspace.
+
+They paste or upload a meeting transcript.
+
+### STEP 3 — AI ANALYSIS
+
+User clicks:
+
+**Analyze Meeting**
+
+AI extracts:
+
+- Decisions
+- Commitments
+- Tasks
+- Owners
+- Deadlines
+- Dependencies
+- Unresolved questions
+
+### STEP 4 — HUMAN REVIEW
+
+Display extracted information in an editable review interface.
+
+User can:
+
+- Approve tasks
+- Edit tasks
+- Remove incorrect tasks
+- Correct owners
+- Adjust deadlines
+- Confirm dependencies
+
+### STEP 5 — GENERATE EXECUTION PLAN
+
+After approval, the system:
+
+- Creates tasks.
+- Stores commitments.
+- Builds dependency relationships.
+- Updates the project dashboard.
+- Generates the dependency graph.
+
+### STEP 6 — TRACK EXECUTION
+
+Users update task progress.
+
+The Execution Twin updates automatically.
+
+### STEP 7 — DETECT RISKS
+
+The system identifies:
+
+- Overdue tasks
+- Blocked tasks
+- Missing owners
+- Unresolved dependencies
+- Potential scheduling conflicts
+
+### STEP 8 — RUN WHAT-IF SIMULATION
+
+User selects a task and simulates a delay.
+
+The system calculates the downstream impact.
+
+### STEP 9 — GENERATE RECOVERY PLAN
+
+AI proposes recovery options based on the calculated impact.
+
+### STEP 10 — APPROVE AND APPLY
+
+User reviews and approves a recovery strategy.
+
+The system updates the project plan and records the change.
+
+### STEP 11 — MONITOR EXECUTION
+
+The dashboard reflects the revised execution state.
+
+This entire workflow must be demonstrable using one realistic sample project.
+
+---
+
+# 7. WEBSITE DESIGN — PREMIUM SAAS EXPERIENCE
+
+Create an exceptionally polished, modern, professional user interface.
+
+The visual quality should resemble a premium AI SaaS product rather than a typical student project.
+
+## Design Direction
+
+**Style:** Modern enterprise SaaS with futuristic AI aesthetics.
+
+**Theme:** Sophisticated dark mode.
+
+**Primary Background:** Deep navy / near-black.
+
+**Primary Accent:** Electric blue.
+
+**Secondary Accent:** Violet.
+
+**Supporting Colors:** Cyan, white, slate gray.
+
+**Typography:** Inter or a similarly clean modern sans-serif font.
+
+**Design Principles:**
+
+- Strong visual hierarchy
+- Generous whitespace
+- Elegant typography
+- Subtle gradients
+- Carefully designed cards
+- Soft shadows
+- Consistent border radii
+- Smooth transitions
+- Accessible contrast
+- Responsive layouts
+- Meaningful microinteractions
+
+Avoid excessive glow effects, distracting animations, cluttered layouts, and generic AI-generated design patterns.
+
+Every visual element must serve a functional purpose.
+
+## Landing Page Sections
+
+1. Premium navigation bar
+2. Hero section
+3. Interactive product preview
+4. Problem explanation
+5. How OneFlow AI works
+6. Five core innovations
+7. Interactive What-If Simulator preview
+8. Product workflow explanation
+9. Benefits for teams
+10. Call to action
+11. Professional footer
+
+### Hero Copy
+
+**Headline:**
+
+Your Meetings Have Answers.  
+OneFlow AI Turns Them Into Action.
+
+**Subheadline:**
+
+Transform conversations into commitments, visualize task dependencies, predict project delays, and recover intelligently — all from one AI-powered execution workspace.
+
+**Primary CTA:**
+
+Launch Workspace
+
+**Secondary CTA:**
+
+Explore Live Demo
+
+Create a beautiful hero visualization featuring the Execution Twin dashboard.
+
+---
+
+# 8. APPLICATION NAVIGATION
+
+Build the following application pages:
+
+1. **Overview** — Execution Twin Dashboard
+2. **Projects** — Project Management
+3. **Meeting Intelligence** — Transcript Analysis
+4. **Commitments** — Commitment Tracker
+5. **Execution Board** — Task Management
+6. **Dependency DNA** — Interactive Graph
+7. **What-If Lab** — Delay Simulation
+8. **Recovery Planner** — AI Recovery Strategies
+9. **Risk Radar** — Project Risk Monitoring
+10. **Settings** — Workspace Preferences
+
+Use a professional sidebar navigation system.
+
+Include:
+
+- Global search
+- Project switcher
+- User profile
+- Notifications
+- Contextual actions
+- Loading states
+- Empty states
+- Error messages
+
+All navigation items must lead to functional pages.
+
+---
+
+# 9. AI SYSTEM ARCHITECTURE
+
+The AI system must have clearly separated responsibilities.
+
+## AI Module 1 — Meeting Understanding
+
+Responsibilities:
+
+- Analyze transcript content.
+- Extract commitments.
+- Identify decisions.
+- Detect explicit responsibilities.
+- Interpret deadlines.
+- Identify possible dependencies.
+- Generate structured output.
+
+## AI Module 2 — Commitment Intelligence
+
+Responsibilities:
+
+- Normalize extracted commitments.
+- Identify missing information.
+- Link commitments to project tasks.
+- Maintain source traceability.
+- Flag uncertain assignments.
+
+## AI Module 3 — Execution Risk Explanation
+
+Responsibilities:
+
+- Interpret deterministic risk-analysis results.
+- Explain blocked dependencies.
+- Summarize project execution risks.
+- Generate understandable project insights.
+
+## AI Module 4 — Recovery Planning
+
+Responsibilities:
+
+- Analyze simulated impact.
+- Propose recovery strategies.
+- Explain trade-offs.
+- Recommend possible next steps.
+- Prepare changes for user approval.
+
+## Deterministic Execution Engine
+
+Create a separate non-LLM engine for:
+
+- Dependency graph validation
+- Task scheduling
+- Delay propagation
+- Critical-path calculations
+- Deadline conflict detection
+- Simulation comparisons
+
+### Important Separation
+
+**AI interprets conversations and recommends actions.**
+
+**Algorithms calculate dependencies, schedules, and delay impacts.**
+
+**Humans approve consequential changes.**
+
+This separation is essential to product reliability.
+
+---
+
+# 10. RECOMMENDED TECHNOLOGY STACK
+
+Use a modern, maintainable full-stack architecture.
+
+## Frontend
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui
+- Lucide Icons
+- Framer Motion or Motion
+- React Flow
+- Recharts
+
+## Backend
+
+- Python
+- FastAPI
+- Pydantic
+- SQLAlchemy
+
+## Database
+
+- PostgreSQL
+
+For a simplified local development environment, SQLite is acceptable initially.
+
+## AI Integration
+
+Use a configurable LLM API provider through a secure backend service.
+
+Keep API keys on the server.
+
+Use structured JSON generation with schema validation.
+
+## State Management
+
+Use TanStack Query for server data and an appropriate lightweight state-management solution for local UI state.
+
+## Deployment
+
+- Frontend: Vercel
+- Backend: Render or another compatible Python hosting service
+- Database: Managed PostgreSQL
+
+If the selected build environment cannot support this exact stack, choose a compatible alternative while preserving the complete product functionality and user experience.
+
+---
+
+# 11. DATABASE DESIGN
+
+Create appropriate relational tables or models for:
+
+### Users
+- id
+- name
+- email
+- created_at
+
+### Projects
+- id
+- name
+- description
+- deadline
+- status
+- created_at
+
+### Project Members
+- id
+- project_id
+- user_id
+- role
+
+### Meetings
+- id
+- project_id
+- title
+- transcript
+- summary
+- created_at
+
+### Commitments
+- id
+- meeting_id
+- task_id
+- owner_id
+- original_statement
+- confidence
+- approval_status
+
+### Tasks
+- id
+- project_id
+- title
+- description
+- owner_id
+- start_date
+- due_date
+- estimated_duration
+- priority
+- status
+- created_at
+
+### Task Dependencies
+- id
+- predecessor_task_id
+- successor_task_id
+
+### Simulations
+- id
+- project_id
+- selected_task_id
+- delay_days
+- simulation_results
+- created_at
+
+### Recovery Plans
+- id
+- simulation_id
+- recommendations
+- approval_status
+- created_at
+
+### Activity Logs
+- id
+- project_id
+- actor_id
+- action
+- timestamp
+
+Implement proper relationships, constraints, and validation.
+
+---
+
+# 12. API DESIGN
+
+Implement RESTful endpoints for:
+
+## Projects
+
+- Create project
+- List projects
+- Retrieve project
+- Update project
+- Delete project
+
+## Meetings
+
+- Upload meeting
+- Analyze meeting
+- Retrieve meeting analysis
+- Approve extracted commitments
+
+## Tasks
+
+- Create task
+- Update task
+- Delete task
+- Change task status
+- Assign task owner
+
+## Dependencies
+
+- Create dependency
+- Remove dependency
+- Retrieve dependency graph
+- Validate graph
+
+## Simulations
+
+- Run delay simulation
+- Retrieve simulation results
+- Compare scenarios
+
+## Recovery Planning
+
+- Generate recovery recommendations
+- Review recommendations
+- Approve recovery plan
+- Apply approved changes
+
+## Dashboard
+
+- Retrieve project metrics
+- Retrieve project risks
+- Retrieve execution activity
+
+Use consistent response schemas and proper error handling.
+
+---
+
+# 13. REALISTIC SAMPLE DATA
+
+Include a complete demonstration project.
+
+**Project Name:** AI Hackathon Product Launch
+
+**Team Members:**
+
+- Arun — Frontend Developer
+- Sanjeev — Backend Developer
+- Dharani — Testing and Quality Assurance
+- Daresh — Product Coordination
+
+### Sample Meeting Transcript
+
+Daresh: "We need to complete our AI hackathon project before the final submission."
+
+Arun: "I'll complete the frontend dashboard by Friday."
+
+Sanjeev: "I'll integrate the backend APIs once the frontend structure is ready."
+
+Dharani: "I'll begin testing after the frontend and backend integration is complete."
+
+Daresh: "I'll prepare the final presentation and coordinate the submission."
+
+### Expected Output
+
+The system should identify the commitments, create the task plan, and construct the dependencies supported by the conversation.
+
+### Required Demonstration
+
+Simulate a two-day delay in frontend development.
+
+Show:
+
+- Impacted downstream tasks
+- Updated timeline
+- Potential submission risk
+- Recovery recommendations
+- Approval workflow
+- Updated dashboard
+
+This sample must work through the actual application logic.
+
+---
+
+# 14. USER EXPERIENCE REQUIREMENTS
+
+Every important user action must produce meaningful feedback.
+
+Include:
+
+- Loading indicators during AI analysis
+- Clear success messages
+- Helpful validation errors
+- Confirmation dialogs for significant changes
+- Editable AI-generated results
+- Simulation progress indicators
+- Visual before-and-after comparisons
+- Responsive layouts
+- Keyboard-accessible controls
+- Accessible forms and labels
+
+Avoid placeholder buttons that do nothing.
+
+Avoid pages that only display static text without functional purpose.
+
+---
+
+# 15. SECURITY AND TRUST
+
+Implement sensible security practices.
+
+- Keep AI API credentials on the backend.
+- Validate all inputs.
+- Sanitize uploaded content.
+- Restrict supported file types.
+- Limit upload sizes.
+- Prevent unauthorized project access.
+- Use secure authentication if multiuser accounts are implemented.
+- Treat meeting transcripts as potentially sensitive data.
+- Never send data to external services without an appropriate user action and disclosure.
+- Require approval before applying recovery plans.
+- Maintain an audit trail of important changes.
+
+If authentication is outside the hackathon MVP scope, clearly label the application as a local demonstration workspace and avoid pretending it has enterprise-grade access controls.
+
+---
+
+# 16. DEMO MODE AND REAL AI MODE
+
+The application must support two clearly distinguishable operating modes.
+
+## Mode A — Live AI Mode
+
+When valid API credentials are configured:
+
+- Analyze actual user-submitted meeting content.
+- Extract structured commitments.
+- Generate AI recovery recommendations.
+- Display actual model results.
+
+## Mode B — Demo Mode
+
+When AI credentials are unavailable:
+
+- Allow judges to explore a complete sample project.
+- Provide clearly labeled sample analysis results.
+- Run the real deterministic dependency engine.
+- Run the real What-If Simulator.
+- Demonstrate the approval workflow.
+- Update the dashboard based on user actions.
+
+Do not pretend prerecorded AI responses are live AI-generated results.
+
+Demo mode should still demonstrate genuine application logic.
+
+---
+
+# 17. HACKATHON EVALUATION ALIGNMENT
+
+The application is being developed for a hackathon with the following scoring breakdown:
+
+| Criterion | Weight |
+|---|---|
+| Prototype Quality and UX | 25% |
+| AI Integration | 25% |
+| Problem Understanding | 20% |
+| LinkedIn Content and Engagement | 15% |
+| Innovation and Creativity | 15% |
+
+Design the project to demonstrate strength in each category.
+
+### Prototype Quality and UX — 25%
+
+Prioritize:
+
+- Premium interface
+- Smooth navigation
+- Complete working workflow
+- Responsive design
+- Clear interaction feedback
+
+### AI Integration — 25%
+
+Demonstrate:
+
+- Actual meeting understanding
+- Structured commitment extraction
+- AI-assisted recovery recommendations
+- Meaningful integration between AI outputs and application data
+
+### Problem Understanding — 20%
+
+Clearly communicate:
+
+- Why meeting commitments get lost
+- How dependencies cause cascading delays
+- Why summaries alone do not solve execution problems
+- How the product addresses these challenges
+
+### LinkedIn Content and Engagement — 15%
+
+Prepare a professional project story that explains:
+
+- The problem
+- The motivation
+- The solution
+- The development journey
+- The innovation
+
+Do not fabricate engagement metrics or user testimonials.
+
+### Innovation and Creativity — 15%
+
+Emphasize:
+
+- AI Execution Twin
+- Commitment Intelligence
+- Dependency DNA
+- Future Impact Simulator
+- AI Recovery Planner
+
+The **What-If Simulator** must be the standout feature.
+
+---
+
+# 18. REQUIRED BUILD ORDER
+
+Implement the project in this sequence.
+
+### Phase 1 — Foundation
+
+- Project structure
+- Frontend setup
+- Backend setup
+- Database
+- Shared design system
+- Application navigation
+
+### Phase 2 — Core Workspace
+
+- Project creation
+- Team members
+- Task management
+- Dashboard
+- Sample project data
+
+### Phase 3 — Meeting Intelligence
+
+- Transcript input
+- File upload
+- AI analysis
+- Structured extraction
+- Commitment approval
+- Task generation
+
+### Phase 4 — Dependency DNA
+
+- Dependency data model
+- Graph validation
+- Interactive visualization
+- Task synchronization
+
+### Phase 5 — What-If Simulator
+
+- Scheduling algorithm
+- Delay propagation
+- Impact analysis
+- Before-and-after visualization
+
+### Phase 6 — AI Recovery Planner
+
+- Recovery recommendation engine
+- Scenario comparison
+- Human approval
+- Application of approved changes
+
+### Phase 7 — Risk Radar
+
+- Risk detection
+- Dashboard integration
+- Risk explanations
+- Progress tracking
+
+### Phase 8 — Polish and Testing
+
+- Responsive improvements
+- Animations
+- Accessibility
+- Error handling
+- End-to-end testing
+- Deployment preparation
+
+---
+
+# 19. QUALITY ASSURANCE
+
+Before declaring the project complete, verify the following:
+
+1. A user can create a project.
+2. A user can add a meeting transcript.
+3. AI can analyze a transcript when configured.
+4. Extracted commitments are editable.
+5. Approved commitments become tasks.
+6. Task dependencies are stored correctly.
+7. The dependency graph reflects real task data.
+8. Changing task status updates the dashboard.
+9. Delay simulation produces calculated results.
+10. Downstream dependencies are correctly evaluated.
+11. Recovery options can be generated.
+12. Recovery changes require approval.
+13. Approved changes update the project.
+14. The interface works on desktop and mobile.
+15. Demo mode works without external API credentials.
+16. The application handles invalid inputs gracefully.
+17. API keys are never exposed in frontend code.
+18. The application can be started using documented commands.
+
+Add automated tests for dependency validation, scheduling, and delay propagation.
+
+---
+
+# 20. EXPECTED FINAL DELIVERABLES
+
+Deliver:
+
+1. Complete frontend source code.
+2. Complete backend source code.
+3. Database models and migrations.
+4. Working AI integration layer.
+5. Functional dependency graph.
+6. Functional What-If Simulator.
+7. AI Recovery Planner.
+8. Unified Execution Twin Dashboard.
+9. Realistic sample project.
+10. Responsive landing page.
+11. Environment variable example file.
+12. Setup instructions.
+13. Deployment instructions.
+14. Testing instructions.
+15. README documenting the architecture and features.
+
+The README must clearly explain which features use real AI, which use deterministic algorithms, and which are demonstration-only.
+
+---
+
+# 21. STRICT NON-NEGOTIABLE RULES
+
+**RULE 1:** Do not change the project name OneFlow AI.
+
+**RULE 2:** Do not change the selected problem statement: Meeting-to-Execution Agent.
+
+**RULE 3:** Do not replace the AI Execution Twin concept with a generic meeting summarizer.
+
+**RULE 4:** Preserve all five core innovations.
+
+**RULE 5:** The What-If Simulator must be genuinely functional.
+
+**RULE 6:** The dependency graph must be generated from actual task data.
+
+**RULE 7:** AI-generated commitments must require user review.
+
+**RULE 8:** Recovery plans must require approval before modifying project data.
+
+**RULE 9:** The website must look professional, premium, and thoughtfully designed.
+
+**RULE 10:** Every major dashboard feature must be interactive.
+
+**RULE 11:** Do not fabricate AI integrations, project analytics, or real-world user activity.
+
+**RULE 12:** Prioritize a complete, reliable end-to-end workflow over superficial feature quantity.
+
+**RULE 13:** Do not silently remove required functionality because implementation becomes difficult.
+
+**RULE 14:** If a feature cannot be completed, document the limitation and provide the best functional implementation possible without misrepresenting its capabilities.
+
+**RULE 15:** Do not stop after generating the landing page. Build the actual application.
+
+---
+
+# 22. FINAL PRODUCT EXPERIENCE
+
+The final application should make the following experience possible:
+
+A team finishes a meeting.
+
+OneFlow AI understands the commitments made during that meeting.
+
+The system creates a structured execution plan.
+
+An interactive graph reveals how tasks depend on one another.
+
+The Execution Twin monitors the project's current state.
+
+A team member reports a delay.
+
+The user opens the What-If Simulator.
+
+The platform calculates the consequences of that delay.
+
+AI explains the risks and recommends recovery strategies.
+
+The user selects and approves a recovery plan.
+
+The dashboard updates to reflect the new execution plan.
+
+All of this happens inside one unified workspace.
+
+---
+
+# 23. FINAL INSTRUCTION TO THE AI BUILDER
+
+You are not building another meeting summarizer.
+
+You are building an intelligent execution system that connects conversations, commitments, dependencies, predictions, and recovery decisions.
+
+The defining innovation is:
+
+**MEETING INTELLIGENCE + COMMITMENT TRACKING + DEPENDENCY GRAPH + DELAY SIMULATION + AI RECOVERY PLANNING = AI EXECUTION TWIN**
+
+The entire application must communicate this idea through its design, architecture, functionality, and user experience.
+
+Start by establishing the application architecture and implementation plan.
+
+Then build the complete application in the specified phases.
+
+Use real, testable logic.
+
+Maintain a coherent visual design.
+
+Ensure the end-to-end demo works.
+
+Do not change the central concept.
+
+**BUILD ONEFLOW AI — FROM CONVERSATION TO COMPLETION.**
